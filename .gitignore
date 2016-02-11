@@ -1,5 +1,25 @@
-*.bak
-**/db/
-**/output_files/
-**/incremental_db/
-**/simulation/
+# Ignore everything
+*
+# Don't ignore directories, so we can recurse into them
+!*/
+# Don't ignore .gitignore and others
+!.gitignore
+!*.png
+!*.jpg
+!*.jpeg
+!*.vwf
+!*.vhd
+!*.qpf
+!*.qsf
+!*.txt
+
+# Overrule and ignore these
+._*
+
+
+#OLD SHAIT
+#*.bak
+#**/db/
+#**/output_files/
+#**/incremental_db/
+#**/simulation/
