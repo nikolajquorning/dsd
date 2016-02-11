@@ -1,5 +1,5 @@
 Analysis & Synthesis report for exercise2
-Thu Feb 11 10:11:52 2016
+Thu Feb 11 11:34:06 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 11 10:11:52 2016           ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 11 11:34:06 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; exercise2                                       ;
 ; Top-level Entity Name              ; half_adder_tester                               ;
@@ -149,19 +149,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 8      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------+---------+
-; half_adder.vhd                   ; yes             ; User VHDL File  ; C:/dsd/exercise2/half_adder.vhd        ;         ;
-; half_adder_tester.vhd            ; yes             ; User VHDL File  ; C:/dsd/exercise2/half_adder_tester.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+; half_adder_tester.vhd            ; yes             ; User VHDL File  ; C:/dsd/exercise2/half_adder_tester.vhd   ;         ;
+; half_adder_behavior.vhd          ; yes             ; User VHDL File  ; C:/dsd/exercise2/half_adder_behavior.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -194,14 +194,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; |half_adder_tester         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |half_adder_tester               ; work         ;
-;    |half_adder:i1|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |half_adder_tester|half_adder:i1 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+; |half_adder_tester          ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |half_adder_tester                        ; work         ;
+;    |half_adder_behavior:i1| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |half_adder_tester|half_adder_behavior:i1 ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -235,27 +235,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Feb 11 10:11:50 2016
+    Info: Processing started: Thu Feb 11 11:34:04 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off exercise2 -c exercise2
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file half_adder.vhd
-    Info (12022): Found design unit 1: half_adder-dataflow
-    Info (12023): Found entity 1: half_adder
+Info (12021): Found 2 design units, including 1 entities, in source file half_adder_dataflow.vhd
+    Info (12022): Found design unit 1: half_adder_dataflow-dataflow
+    Info (12023): Found entity 1: half_adder_dataflow
 Info (12021): Found 2 design units, including 1 entities, in source file half_adder_tester.vhd
     Info (12022): Found design unit 1: half_adder_tester-struc
     Info (12023): Found entity 1: half_adder_tester
+Warning (12019): Can't analyze file -- file output_files/xor_2.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file xor_2.vhd
+    Info (12022): Found design unit 1: xor_2-dataflow
+    Info (12023): Found entity 1: xor_2
+Info (12021): Found 2 design units, including 1 entities, in source file and_2.vhd
+    Info (12022): Found design unit 1: and_2-dataflow
+    Info (12023): Found entity 1: and_2
+Info (12021): Found 2 design units, including 1 entities, in source file half_adder_behavior.vhd
+    Info (12022): Found design unit 1: half_adder_behavior-behavior
+    Info (12023): Found entity 1: half_adder_behavior
+Info (12021): Found 2 design units, including 1 entities, in source file half_adder_structure.vhd
+    Info (12022): Found design unit 1: half_adder_structure-structure
+    Info (12023): Found entity 1: half_adder_structure
 Info (12127): Elaborating entity "half_adder_tester" for the top level hierarchy
-Info (12128): Elaborating entity "half_adder" for hierarchy "half_adder:i1"
+Info (12128): Elaborating entity "half_adder_behavior" for hierarchy "half_adder_behavior:i1"
+Warning (20013): Ignored assignments for entity "exercise1" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity exercise1 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity exercise1 -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 2 output pins
     Info (21061): Implemented 2 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 510 megabytes
-    Info: Processing ended: Thu Feb 11 10:11:52 2016
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 502 megabytes
+    Info: Processing ended: Thu Feb 11 11:34:06 2016
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
