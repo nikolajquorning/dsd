@@ -1,0 +1,14 @@
+-- File: tester.vhd
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity half_adder_tester is
+	port(	SW		:	in std_logic_vector(1 downto 0);
+			LEDR	:	out std_logic);
+end half_adder_tester;
+
+architecture dataflow of half_adder is
+	begin
+ sum <= a xor b;
+ carry_out <= a and b;
+end dataflow;

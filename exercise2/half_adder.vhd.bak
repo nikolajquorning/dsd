@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity my_design is
+	port(	A, B, C : in std_logic;
+			D : out std_logic);
+end my_design;
+
+architecture structural of my_design is
+	signal c1 : std_logic;
+
+ begin
+ xg1 : entity work.xor_gate port map(A => A, B => B, C => c1);
+ D <= c1 and C;
+end structural;
