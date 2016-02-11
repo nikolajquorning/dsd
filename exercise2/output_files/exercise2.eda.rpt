@@ -1,5 +1,5 @@
 EDA Netlist Writer report for exercise2
-Thu Feb 11 13:43:13 2016
+Thu Feb 11 14:38:57 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Feb 11 13:43:13 2016 ;
+; EDA Netlist Writer Status ; Successful - Thu Feb 11 14:38:57 2016 ;
 ; Revision Name             ; exercise2                             ;
-; Top-level Entity Name     ; half_adder_tester                     ;
+; Top-level Entity Name     ; full_adder_tester                     ;
 ; Family                    ; Cyclone II                            ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -80,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Feb 11 13:43:12 2016
+    Info: Processing started: Thu Feb 11 14:38:57 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off exercise2 -c exercise2
 Info (204019): Generated file exercise2.vo in folder "C:/dsd/exercise2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Thu Feb 11 13:43:13 2016
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Feb 11 14:38:57 2016
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

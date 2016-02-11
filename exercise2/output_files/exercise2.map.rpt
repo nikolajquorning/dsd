@@ -1,5 +1,5 @@
 Analysis & Synthesis report for exercise2
-Thu Feb 11 14:04:26 2016
+Thu Feb 11 14:38:45 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,10 +41,10 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb 11 14:04:26 2016           ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 11 14:38:45 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; exercise2                                       ;
-; Top-level Entity Name              ; full_adder                                      ;
+; Top-level Entity Name              ; full_adder_tester                               ;
 ; Family                             ; Cyclone II                                      ;
 ; Total logic elements               ; 2                                               ;
 ;     Total combinational functions  ; 2                                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; full_adder         ; exercise2          ;
+; Top-level entity name                                                      ; full_adder_tester  ; exercise2          ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -161,6 +161,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+------------------------------------------+---------+
 ; half_adder_dataflow.vhd          ; yes             ; User VHDL File  ; C:/dsd/exercise2/half_adder_dataflow.vhd ;         ;
 ; full_adder.vhd                   ; yes             ; User VHDL File  ; C:/dsd/exercise2/full_adder.vhd          ;         ;
+; full_adder_tester.vhd            ; yes             ; User VHDL File  ; C:/dsd/exercise2/full_adder_tester.vhd   ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------+---------+
 
 
@@ -187,21 +188,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;       ;
 ; I/O pins                                    ; 5     ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; a     ;
+; Maximum fan-out node                        ; SW[0] ;
 ; Maximum fan-out                             ; 2     ;
 ; Total fan-out                               ; 8     ;
 ; Average fan-out                             ; 1.14  ;
 +---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; |full_adder                  ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |full_adder                         ; work         ;
-;    |half_adder_dataflow:ha2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |full_adder|half_adder_dataflow:ha2 ; work         ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; |full_adder_tester              ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |full_adder_tester                                       ; work         ;
+;    |full_adder:i1|              ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |full_adder_tester|full_adder:i1                         ; work         ;
+;       |half_adder_dataflow:ha2| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |full_adder_tester|full_adder:i1|half_adder_dataflow:ha2 ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -235,7 +237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Feb 11 14:04:24 2016
+    Info: Processing started: Thu Feb 11 14:38:43 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off exercise2 -c exercise2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file half_adder_dataflow.vhd
@@ -260,8 +262,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file half_ad
 Info (12021): Found 2 design units, including 1 entities, in source file full_adder.vhd
     Info (12022): Found design unit 1: full_adder-structure
     Info (12023): Found entity 1: full_adder
-Info (12127): Elaborating entity "full_adder" for the top level hierarchy
-Info (12128): Elaborating entity "half_adder_dataflow" for hierarchy "half_adder_dataflow:ha1"
+Info (12021): Found 2 design units, including 1 entities, in source file full_adder_tester.vhd
+    Info (12022): Found design unit 1: full_adder_tester-struc
+    Info (12023): Found entity 1: full_adder_tester
+Info (12127): Elaborating entity "full_adder_tester" for the top level hierarchy
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:i1"
+Info (12128): Elaborating entity "half_adder_dataflow" for hierarchy "full_adder:i1|half_adder_dataflow:ha1"
 Warning (20013): Ignored assignments for entity "exercise1" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity exercise1 -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity exercise1 -section_id Top was ignored
@@ -294,7 +300,7 @@ Info (21057): Implemented 7 device resources after synthesis - the final resourc
     Info (21061): Implemented 2 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 502 megabytes
-    Info: Processing ended: Thu Feb 11 14:04:26 2016
+    Info: Processing ended: Thu Feb 11 14:38:45 2016
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

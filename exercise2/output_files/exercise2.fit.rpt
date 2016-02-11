@@ -1,5 +1,5 @@
 Fitter report for exercise2
-Thu Feb 11 13:43:06 2016
+Thu Feb 11 14:38:51 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -60,10 +60,10 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Feb 11 13:43:06 2016           ;
+; Fitter Status                      ; Successful - Thu Feb 11 14:38:51 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; exercise2                                       ;
-; Top-level Entity Name              ; half_adder_tester                               ;
+; Top-level Entity Name              ; full_adder_tester                               ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
@@ -71,7 +71,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 2 / 33,216 ( < 1 % )                            ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                              ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 4 / 475 ( < 1 % )                               ;
+; Total pins                         ; 5 / 475 ( 1 % )                                 ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
@@ -507,7 +507,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location ;                ;              ; SW[15]        ; PIN_U4        ; QSF Assignment ;
 ; Location ;                ;              ; SW[16]        ; PIN_V1        ; QSF Assignment ;
 ; Location ;                ;              ; SW[17]        ; PIN_V2        ; QSF Assignment ;
-; Location ;                ;              ; SW[2]         ; PIN_P25       ; QSF Assignment ;
 ; Location ;                ;              ; SW[3]         ; PIN_AE14      ; QSF Assignment ;
 ; Location ;                ;              ; SW[4]         ; PIN_AF14      ; QSF Assignment ;
 ; Location ;                ;              ; SW[5]         ; PIN_AD13      ; QSF Assignment ;
@@ -576,8 +575,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 10 ( 0.00 % )      ;
-;     -- Achieved     ; 0 / 10 ( 0.00 % )      ;
+;     -- Requested    ; 0 / 11 ( 0.00 % )      ;
+;     -- Achieved     ; 0 / 11 ( 0.00 % )      ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -600,7 +599,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 7       ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 8       ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -623,8 +622,8 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ;                                             ;                      ;
 ; Logic element usage by number of LUT inputs ;                      ;
 ;     -- 4 input functions                    ; 0                    ;
-;     -- 3 input functions                    ; 0                    ;
-;     -- <=2 input functions                  ; 2                    ;
+;     -- 3 input functions                    ; 2                    ;
+;     -- <=2 input functions                  ; 0                    ;
 ;     -- Register only                        ; 0                    ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
@@ -637,8 +636,8 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ;                                             ;                      ;
 ; Total LABs:  partially or completely used   ; 1 / 2,076 ( < 1 % )  ;
 ; Virtual pins                                ; 0                    ;
-; I/O pins                                    ; 4 / 475 ( < 1 % )    ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )       ;
+; I/O pins                                    ; 5 / 475 ( 1 % )      ;
+;     -- Clock pins                           ; 2 / 8 ( 25 % )       ;
 ;                                             ;                      ;
 ; Global signals                              ; 0                    ;
 ; M4Ks                                        ; 0 / 105 ( 0 % )      ;
@@ -654,8 +653,8 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%         ;
 ; Maximum fan-out                             ; 2                    ;
 ; Highest non-global fan-out                  ; 2                    ;
-; Total fan-out                               ; 6                    ;
-; Average fan-out                             ; 0.67                 ;
+; Total fan-out                               ; 8                    ;
+; Average fan-out                             ; 0.80                 ;
 +---------------------------------------------+----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -675,8 +674,8 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ;                                             ;                     ;                                ;
 ; Logic element usage by number of LUT inputs ;                     ;                                ;
 ;     -- 4 input functions                    ; 0                   ; 0                              ;
-;     -- 3 input functions                    ; 0                   ; 0                              ;
-;     -- <=2 input functions                  ; 2                   ; 0                              ;
+;     -- 3 input functions                    ; 2                   ; 0                              ;
+;     -- <=2 input functions                  ; 0                   ; 0                              ;
 ;     -- Register only                        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic elements by mode                      ;                     ;                                ;
@@ -689,7 +688,7 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ; Total LABs:  partially or completely used   ; 1 / 2076 ( < 1 % )  ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                     ;                                ;
 ; Virtual pins                                ; 0                   ; 0                              ;
-; I/O pins                                    ; 4                   ; 0                              ;
+; I/O pins                                    ; 5                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )      ; 0 / 70 ( 0 % )                 ;
 ; Total memory bits                           ; 0                   ; 0                              ;
 ; Total RAM block bits                        ; 0                   ; 0                              ;
@@ -701,7 +700,7 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ;     -- Registered Output Connections        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 6                   ; 0                              ;
+;     -- Total Connections                    ; 8                   ; 0                              ;
 ;     -- Registered Connections               ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; External Connections                        ;                     ;                                ;
@@ -709,7 +708,7 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ;     -- hard_block:auto_generated_inst       ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Partition Interface                         ;                     ;                                ;
-;     -- Input Ports                          ; 2                   ; 0                              ;
+;     -- Input Ports                          ; 3                   ; 0                              ;
 ;     -- Output Ports                         ; 2                   ; 0                              ;
 ;     -- Bidir Ports                          ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
@@ -736,6 +735,7 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; SW[0] ; N25   ; 5        ; 65           ; 19           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[1] ; N26   ; 5        ; 65           ; 19           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[2] ; P25   ; 6        ; 65           ; 19           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -759,7 +759,7 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ; 3        ; 0 / 56 ( 0 % ) ; 3.3V          ; --           ;
 ; 4        ; 0 / 58 ( 0 % ) ; 3.3V          ; --           ;
 ; 5        ; 2 / 65 ( 3 % ) ; 3.3V          ; --           ;
-; 6        ; 1 / 59 ( 2 % ) ; 3.3V          ; --           ;
+; 6        ; 2 / 59 ( 3 % ) ; 3.3V          ; --           ;
 ; 7        ; 2 / 58 ( 3 % ) ; 3.3V          ; --           ;
 ; 8        ; 0 / 56 ( 0 % ) ; 3.3V          ; --           ;
 +----------+----------------+---------------+--------------+
@@ -1284,7 +1284,7 @@ The pin-out file can be found in C:/dsd/exercise2/output_files/exercise2.pin.
 ; P22      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; P23      ; 305        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P24      ; 304        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P25      ; 307        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; P25      ; 307        ; 6        ; SW[2]                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; P26      ; 306        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; R1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R2       ; 71         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1483,14 +1483,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                  ;
-+-----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------+--------------+
-; Compilation Hierarchy Node  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                       ; Library Name ;
-+-----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------+--------------+
-; |half_adder_tester          ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 4    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |half_adder_tester                        ; work         ;
-;    |half_adder_dataflow:i1| ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |half_adder_tester|half_adder_dataflow:i1 ; work         ;
-+-----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++---------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                      ; Library Name ;
++---------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------+--------------+
+; |full_adder_tester              ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 5    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |full_adder_tester                                       ; work         ;
+;    |full_adder:i1|              ; 2 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (1)        ; 0 (0)             ; 0 (0)            ; |full_adder_tester|full_adder:i1                         ; work         ;
+;       |half_adder_dataflow:ha2| ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |full_adder_tester|full_adder:i1|half_adder_dataflow:ha2 ; work         ;
++---------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1503,6 +1504,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[1] ; Output   ; --            ; --            ; --                    ; --  ;
 ; SW[0]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[1]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; SW[2]   ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 +---------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1513,19 +1515,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; SW[0]               ;                   ;         ;
 ; SW[1]               ;                   ;         ;
+; SW[2]               ;                   ;         ;
 +---------------------+-------------------+---------+
 
 
-+--------------------------------------------+
-; Non-Global High Fan-Out Signals            ;
-+----------------------------------+---------+
-; Name                             ; Fan-Out ;
-+----------------------------------+---------+
-; SW[1]                            ; 2       ;
-; SW[0]                            ; 2       ;
-; half_adder_dataflow:i1|carry_out ; 1       ;
-; half_adder_dataflow:i1|sum       ; 1       ;
-+----------------------------------+---------+
++-------------------------------------------------------+
+; Non-Global High Fan-Out Signals                       ;
++---------------------------------------------+---------+
+; Name                                        ; Fan-Out ;
++---------------------------------------------+---------+
+; SW[2]                                       ; 2       ;
+; SW[1]                                       ; 2       ;
+; SW[0]                                       ; 2       ;
+; full_adder:i1|carry_out~0                   ; 1       ;
+; full_adder:i1|half_adder_dataflow:ha2|sum~0 ; 1       ;
++---------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -1533,7 +1537,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-----------------------+
 ; Other Routing Resource Type ; Usage                 ;
 +-----------------------------+-----------------------+
-; Block interconnects         ; 4 / 94,460 ( < 1 % )  ;
+; Block interconnects         ; 5 / 94,460 ( < 1 % )  ;
 ; C16 interconnects           ; 0 / 3,315 ( 0 % )     ;
 ; C4 interconnects            ; 10 / 60,840 ( < 1 % ) ;
 ; Global clocks               ; 0 / 16 ( 0 % )        ;
@@ -1592,11 +1596,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 2.00) ; Number of LABs  (Total = 1) ;
+; Number of Distinct Inputs  (Average = 3.00) ; Number of LABs  (Total = 1) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
+; 2                                           ; 0                           ;
+; 3                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -2015,7 +2020,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SW[15]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[16]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[17]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SW[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[5]" is assigned to location or region, but does not exist in design
@@ -2088,7 +2092,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 2 output pins without output pin load capacitance assignment
     Info (306007): Pin "LEDR[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2100,11 +2104,11 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/dsd/exercise2/output_files/exercise2.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 429 warnings
-    Info: Peak virtual memory: 658 megabytes
-    Info: Processing ended: Thu Feb 11 13:43:06 2016
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 428 warnings
+    Info: Peak virtual memory: 660 megabytes
+    Info: Processing ended: Thu Feb 11 14:38:51 2016
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+
