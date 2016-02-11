@@ -11,6 +11,7 @@ source_file = 1, simulation/qsim/simulation_dataflow.vwf
 source_file = 1, simulation/qsim/simulation_behavior.vwf
 source_file = 1, simulation/qsim/simulation_structure.vwf
 source_file = 1, C:/dsd/exercise2/dataflow_simulation.vwf
+source_file = 1, C:/dsd/exercise2/full_adder.vhd
 source_file = 1, C:/dsd/exercise2/db/exercise2.cbx.xml
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
