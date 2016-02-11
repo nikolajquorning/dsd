@@ -12,14 +12,9 @@
 !*.qpf
 !*.qsf
 !*.txt
+!*.pdf
+!*.tex
 
-# Overrule and ignore these
+# Ignore this shit
 ._*
 **/db/*
-
-#OLD SHAIT
-#*.bak
-#**/db/
-#**/output_files/
-#**/incremental_db/
-#**/simulation/
