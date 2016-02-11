@@ -15,7 +15,7 @@
 
 # Overrule and ignore these
 ._*
-
+**/db/*
 
 #OLD SHAIT
 #*.bak
