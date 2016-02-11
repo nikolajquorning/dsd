@@ -9,7 +9,7 @@ end half_adder_tester;
 
 architecture struc of half_adder_tester is
 begin 
-	i1: entity work.half_adder_behavior -- _structure | _dataflow | _behavior
+	i1: entity work.half_adder_dataflow -- _structure | _dataflow | _behavior
 	port map(
 		a => SW(0), 
 		b => SW(1), 
