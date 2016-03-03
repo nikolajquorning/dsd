@@ -7,12 +7,12 @@ entity four_bit_adder_simple is
 	(
 		a	   : in std_logic_vector(3 downto 0);
 		b	   : in std_logic_vector(3 downto 0);
-		sum : out std_logic_vector(3 downto 0)
+		sum 	: buffer std_logic_vector(3 downto 0)
 	);
-end entity;
+end four_bit_adder_simple;
 
 architecture unsigned_impl of four_bit_adder_simple is
-	signal x, y: unsigned(3 downto 0);
+	signal x, y, z: unsigned(3 downto 0);
 begin
 	x <= unsigned(a);
 	y <= unsigned(b);
@@ -20,7 +20,9 @@ begin
 end unsigned_impl;
 
 architecture signed_impl of four_bit_adder_simple is
-
-begin
-		
-end signed_impl
+	signal xs, ys: signed(3 downto 0);
+begin	
+	xs <= signed(a);
+	ys <= signed(b);
+	sum <= std_logic_vector(xs + ys);
+end signed_impl;
