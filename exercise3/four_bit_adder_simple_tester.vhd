@@ -11,7 +11,7 @@ end four_bit_adder_simple_tester;
 
 architecture tester of four_bit_adder_simple_tester is
 begin
-	i1: entity work.four_bit_adder_simple(unsigned_impl)
+	i1: entity work.four_bit_adder_simple(signed_impl)
 	port map 
 	(
 	a => sw(4 downto 1),
