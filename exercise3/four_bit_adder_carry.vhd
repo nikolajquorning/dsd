@@ -27,11 +27,12 @@ end unsigned_carry_impl;
 
 architecture signed_carry_impl of four_bit_adder_carry is
 	signal x, y: signed(4 downto 0);
-	signal res:	 std_logic_vector(4 downto 0);
+	signal res, z:	 std_logic_vector(4 downto 0);
 begin
 	x <= resize(signed(a), 5);
 	y <= resize(signed(b), 5);
-	res <= std_logic_vector(x + y);
+	z <= "0000"&cin;
+	res <= std_logic_vector(x + y + signed(z));
 	sum <= res(3 downto 0);
 	cout <= res(4);
 end signed_carry_impl;
