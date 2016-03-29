@@ -5,10 +5,8 @@ entity when_tester is
 	port (
 		SW   : in std_logic_vector(11 downto 0);
 		KEY  : in std_logic_vector( 1 downto 0);
-		HEX0 : out std_logic_vector(6 downto 0);
-		HEX1 : out std_logic_vector(6 downto 0);
-		HEX2 : out std_logic_vector(6 downto 0);
-		HEX3 : out std_logic_vector(6 downto 0) -- For appearance on the de2-board
+		HEX0, HEX1, HEX2, HEX3 : out std_logic_vector(6 downto 0);
+		-- For appearance on the de2-board we clear HEX3
 	);
 end when_tester;
 
@@ -33,10 +31,10 @@ architecture testing of when_tester is
 				Sseg(6 downto 0) => A(6 downto 0)
 			);
 			
-		HEX3 <=	"1111111"; -- For appearance on the de2-board
+		HEX3 <=	"1111111"; -- For appearance on the de2-board we clear HEX3
 		
-		HEX2 <=	"1000000" when KEY="11" else	--O
-					"0000110" when KEY="01" else	--E
+		HEX2 <=	"1000000" when KEY="11" else --O
+					"0000110" when KEY="01" else --E
 					C;
 					
 		HEX1 <=	"0101011" when KEY="11" else --n
@@ -46,5 +44,4 @@ architecture testing of when_tester is
 		HEX0 <=	"1111111" when KEY="11" else --
 					"0101111" when KEY="01" else --r
 					A;
-		
 end testing;
