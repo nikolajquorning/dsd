@@ -2,8 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity half_adder_dataflow is
-	port(	a, b : in std_logic;
-			sum, carry_out : out std_logic);
+	port (
+		a, b 				: in std_logic;
+		sum, carry_out : out std_logic
+	);
 end half_adder_dataflow;
 
 architecture dataflow of half_adder_dataflow is
