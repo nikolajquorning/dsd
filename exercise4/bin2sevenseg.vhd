@@ -2,9 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity bin2sevenseg is
-	port 
-	(
-		bin  : in std_logic_vector(3 downto 0);
+	port (
+		bin  : in  std_logic_vector(3 downto 0);
 		Sseg : out std_logic_vector(6 downto 0)
 	);
 

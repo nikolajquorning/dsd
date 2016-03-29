@@ -1,3 +1,4 @@
+/* Simulator = Quartus II Simulator */
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -32,7 +33,7 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("a")
+SIGNAL("SW[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -42,7 +43,7 @@ SIGNAL("a")
 	PARENT = "";
 }
 
-SIGNAL("b")
+SIGNAL("SW[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -52,7 +53,7 @@ SIGNAL("b")
 	PARENT = "";
 }
 
-SIGNAL("c")
+SIGNAL("SW[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -62,7 +63,7 @@ SIGNAL("c")
 	PARENT = "";
 }
 
-SIGNAL("x")
+SIGNAL("LEDR[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -72,44 +73,41 @@ SIGNAL("x")
 	PARENT = "";
 }
 
-TRANSITION_LIST("a")
+TRANSITION_LIST("SW[0]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 500.0;
-		LEVEL 0 FOR 490.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 190.0;
+		LEVEL 0 FOR 260.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 250.0;
 	}
 }
 
-TRANSITION_LIST("b")
+TRANSITION_LIST("SW[1]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 220.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 70.0;
-		LEVEL 1 FOR 70.0;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 300.0;
-		LEVEL 0 FOR 220.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 400.0;
 	}
 }
 
-TRANSITION_LIST("c")
+TRANSITION_LIST("SW[2]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 410.0;
-		LEVEL 1 FOR 570.0;
-		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 600.0;
 	}
 }
 
-TRANSITION_LIST("x")
+TRANSITION_LIST("LEDR[0]")
 {
 	NODE
 	{
@@ -120,7 +118,7 @@ TRANSITION_LIST("x")
 
 DISPLAY_LINE
 {
-	CHANNEL = "a";
+	CHANNEL = "SW[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
@@ -129,7 +127,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "b";
+	CHANNEL = "SW[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -138,7 +136,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "c";
+	CHANNEL = "SW[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -147,7 +145,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "x";
+	CHANNEL = "LEDR[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
