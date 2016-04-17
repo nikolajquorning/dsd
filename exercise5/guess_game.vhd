@@ -31,7 +31,7 @@ architecture gaming of guess_game is
 		buttons <= (set, show, try);
 		
 		game_play: process(buttons, secret_value, inputs)
-			begin
+			begin			
 				output <= inputs;
 				secret_value <= "00000001";
 				case(buttons) is

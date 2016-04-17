@@ -10,7 +10,7 @@ end nand8_tester;
 
 architecture testing of nand8_tester is
 	begin
-	i0: entity work.nand8
+	i0: entity work.nandeight
 		port map (
 			a(7 downto 0) => SW(7 downto 0),
 			y => LEDR0

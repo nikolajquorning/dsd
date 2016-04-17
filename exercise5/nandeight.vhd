@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity nand8 is
+entity nandeight is
 	port (
 		a : in  std_logic_vector(7 downto 0);
 		y : out std_logic
 	);
-end nand8;
+end nandeight;
 
-architecture iterate of nand8 is
+architecture iterate of nandeight is
 begin
 	po: process (a) 
 		variable temp : std_logic; 
