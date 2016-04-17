@@ -6,7 +6,7 @@ entity bin2hex_tester is
 		SW   : in  std_logic_vector(3 downto 0);
 		HEX0 : out std_logic_vector(6 downto 0)
 	);
-end bin2hex_tester;66
+end bin2hex_tester;
 
 architecture testing of bin2hex_tester is
 	begin
