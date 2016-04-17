@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 
 entity guess_game is
 	port(
-		inputs : in std_logic_vector(7 downto 0);
-		set    : in std_logic; 								-- Set predefined value
-		show   : in std_logic; 								-- Show predefined value
-		try    : in std_logic; 								-- Evaluate guess
+		inputs : in  std_logic_vector(7 downto 0);
+		set    : in  std_logic; 								-- Set predefined value
+		show   : in  std_logic; 								-- Show predefined value
+		try    : in  std_logic; 								-- Evaluate guess
 		hex1   : out std_logic_vector(6 downto 0);	-- 7-seg ones
 		hex10  : out std_logic_vector(6 downto 0)		-- 7-seg tens
 	); 
@@ -19,13 +19,13 @@ architecture gaming of guess_game is
 	begin
 		ent1: entity work.bin2hex
 			port map (
-				bin(3 downto 0)  => output(3 downto 0),
-				Sseg(6 downto 0) => hex1(6 downto 0)
+				bin (3 downto 0) => output(3 downto 0),
+				Sseg(6 downto 0) => hex1  (6 downto 0)
 			);
 		ent2: entity work.bin2hex
 			port map (
-				bin(3 downto 0) => output(7 downto 4),
-				Sseg(6 downto 0) => hex10(6 downto 0)
+				bin (3 downto 0) => output(7 downto 4),
+				Sseg(6 downto 0) => hex10 (6 downto 0)
 			);
 		
 		buttons <= (set, show, try);
