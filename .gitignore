@@ -39,9 +39,8 @@
 # software binary files
 ### tbd
 
-/*
-/*.vdh.bak
-/*.qsf.bak
+*
+!*/
 !/*.gitignore
 ##
 !*.qpf
@@ -53,3 +52,7 @@
 !*.png
 !*.jpg
 !*.jpeg
+
+exercise*/atom_netlists/
+exercise*/db/
+exercise*/simulation/
