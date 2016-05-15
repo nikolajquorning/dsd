@@ -27,7 +27,7 @@ begin
 					clk_out <= '0';
 				end if;
 			else                            --speed is fast
-				if temp_count >= 25000 then  --may be wrong
+				if temp_count >= 250000 then  --may be wrong
 					temp_count := 0;
 					clk_out <= '1';
 				else 

@@ -8,7 +8,7 @@ entity watch is
 		sec_1, sec_10     : out std_logic_vector(6 downto 0);
 		min_1, min_10     : out std_logic_vector(6 downto 0);
 		hrs_1, hrs_10     : out std_logic_vector(6 downto 0);
-		dsd_time          : out std_logic_vector(15 downto 8)
+		dsd_time          : out std_logic_vector(15 downto 0)
 	);
 end watch;
 
@@ -127,4 +127,7 @@ begin
 			bin  => hex_signal6,
 			Sseg => hrs_10
 		);
+	
+	--We set 'time'
+	dsd_time <= hex_signal6 & hex_signal5 & hex_signal4 & hex_signal3;
 end arc;
