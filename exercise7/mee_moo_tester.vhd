@@ -3,15 +3,15 @@ use ieee.std_logic_1164.all;
 
 entity mee_moo_tester is
 	port (
-		key      : in  std_logic_vector(1 downto 0);
-		sw       : in  std_logic_vector(1 downto 0);
-		ledr     : out std_logic_vector(1 downto 0)
+		key  : in  std_logic_vector(1 downto 0);
+		sw   : in  std_logic_vector(1 downto 0);
+		ledr : out std_logic_vector(1 downto 0)
 	);
 end mee_moo_tester;
 
 architecture testing of mee_moo_tester is
 begin
-	watch: entity work.mee_moo
+	fsm: entity work.mee_moo
 		port map (
 			clk     => key(0),
 			reset   => key(1),
