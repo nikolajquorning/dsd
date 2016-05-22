@@ -11,8 +11,10 @@ entity code_lock is
 end code_lock;
 
 architecture fsm of code_lock is
-type state is (idle, going_idle, eval_1, eval_2, getting_2, unlocked, wrong_code, permalock, err_0, err_1, err_2, err_3);
-signal present_state, next_state, wrong_code_present_state, wrong_code_next_state : state;
+type state is (idle, going_idle, eval_1, eval_2, getting_2, unlocked, wrong_code, permalock);
+type wc_state is (err_0, err_1, err_2, err_3);
+signal present_state, next_state : state;
+signal wrong_code_present_state, wrong_code_next_state : wc_state;
 signal code1   : std_logic_vector(3 downto 0);
 signal code2   : std_logic_vector(3 downto 0);
 signal err_cnt : unsigned(1 downto 0);
@@ -31,7 +33,7 @@ begin
 	end process proc_state_reg;
 
 	-- MAIN STATE MACHINE NEXT STATE
-	proc_next_state: process(present_state, enter, code, code1, code2)
+	proc_next_state: process(present_state, enter, code, code1, code2, err_cnt)
 	begin
 		case present_state is
 			when idle =>
@@ -75,7 +77,17 @@ begin
 					next_state <= present_state;
 				end if;
 			when wrong_code =>
-				err_cnt <= err_cnt + 1;
+				if enter = '0' then
+					if err_cnt = "11" then
+						next_state <= permalock;
+					else 
+						next_state <= going_idle;
+					end if;
+				else
+					next_state <= present_state;
+				end if;
+			when permalock =>
+				next_state <= present_state;
 		end case;
 	end process proc_next_state;
 
@@ -94,17 +106,37 @@ begin
 	begin
 		if reset = '0' then
 			wrong_code_present_state <= err_0;
-			err_cnt <= "00";
 		elsif rising_edge(clk) then
-			present_state <= next_state;
+			wrong_code_present_state <= wrong_code_next_state;
 		end if;
 	end process wrong_state_reg;
 	
-	-- MAIN STATE MACHINE NEXT STATE
-	proc_next_state: process(present_state, enter, code, code1, code2)
+	-- WRONG CODE NEXT STATE
+	proc_wrong_code_next_state: process(wrong_code_present_state, err_cnt)
 	begin
-		case present_state is
-			when wrong_state
+		case wrong_code_present_state is
+			when err_0 =>
+				wrong_code_next_state <= err_1;
+			when err_1 =>
+				wrong_code_next_state <= err_2;
+			when err_2 =>
+				wrong_code_next_state <= err_3;
+			when err_3 =>
+				wrong_code_next_state <= err_0;
 		end case;
-	end process proc_next_state;
+	end process proc_wrong_code_next_state;
+	
+	wrong_code_output: process(wrong_code_present_state)
+	begin
+		case wrong_code_present_state is
+			when err_0 =>
+				err_cnt <= "00";
+			when err_1 =>
+				err_cnt <= "01";
+			when err_2 =>
+				err_cnt <= "10";
+			when err_3 =>
+				err_cnt <= "11";
+		end case;
+	end process wrong_code_output;
 end fsm;
