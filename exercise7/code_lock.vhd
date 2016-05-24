@@ -78,7 +78,7 @@ begin
 				end if;
 			when wrong_code =>
 				if enter = '0' then
-					if err_cnt = "10" then
+					if err_cnt = "11" then
 						next_state <= permalock;
 					else 
 						next_state <= going_idle;
@@ -112,34 +112,22 @@ begin
 	end process wrong_state_reg;
 	
 	-- WRONG CODE NEXT STATE
-	proc_wrong_code_next_state: process(wrong_code_present_state, err_cnt)
+	proc_wrong_code_next_state: process(present_state)
 	begin
-		case wrong_code_present_state is
-			when err_0 =>
-				if (present_state = wrong_code) then
+		if present_state = wrong_code then
+			case wrong_code_present_state is
+				when err_0 =>
 					wrong_code_next_state <= err_1;
-				else 
-					wrong_code_next_state <= wrong_code_present_state;
-				end if;
-			when err_1 =>
-				if (present_state = wrong_code) then
+				when err_1 =>
 					wrong_code_next_state <= err_2;
-				else 
-					wrong_code_next_state <= wrong_code_present_state;
-				end if;
-			when err_2 =>
-				if (present_state = wrong_code) then
+				when err_2 =>
 					wrong_code_next_state <= err_3;
-				else 
-					wrong_code_next_state <= wrong_code_present_state;
-				end if;
-			when err_3 =>
-				if (present_state = wrong_code) then
+				when err_3 =>
 					wrong_code_next_state <= err_0;
-				else 
-					wrong_code_next_state <= wrong_code_present_state;
-				end if;
-		end case;
+			end case;
+		else
+			wrong_code_next_state <= wrong_code_present_state;
+		end if;
 	end process proc_wrong_code_next_state;
 	
 	wrong_code_output: process(wrong_code_present_state)
