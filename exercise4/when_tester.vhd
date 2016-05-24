@@ -5,7 +5,7 @@ entity when_tester is
 	port (
 		SW   : in std_logic_vector(11 downto 0);
 		KEY  : in std_logic_vector( 1 downto 0);
-		HEX0, HEX1, HEX2, HEX3 : out std_logic_vector(6 downto 0);
+		HEX0, HEX1, HEX2, HEX3 : out std_logic_vector(6 downto 0)
 		-- For appearance on the de2-board we clear HEX3
 	);
 end when_tester;
