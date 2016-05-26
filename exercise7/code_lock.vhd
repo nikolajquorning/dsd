@@ -78,7 +78,7 @@ begin
 				end if;
 			when wrong_code =>
 				if enter = '0' then
-					if err_cnt = "11" then
+					if err_cnt = "10" then
 						next_state <= permalock;
 					else 
 						next_state <= going_idle;
@@ -114,7 +114,7 @@ begin
 	-- WRONG CODE NEXT STATE
 	proc_wrong_code_next_state: process(present_state)
 	begin
-		if present_state = wrong_code then
+		if present_state = wrong_code and present_state /= next_state then
 			case wrong_code_present_state is
 				when err_0 =>
 					wrong_code_next_state <= err_1;
