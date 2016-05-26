@@ -40,7 +40,7 @@ attribute keep of hSyncCounter : signal is true;  --   ||   --
 -- INSERT YOUR PROCEDURE HERE.
 -- Your procedure should circular increment syncCounter, produce blanking and sync output.  
 procedure syncGenerator ( 
-signal   syncCounter : in integer range 0 to 1023;
+signal   syncCounter : inout integer;
 signal   syncOut     : out std_logic;
 signal   blankOut    : out std_logic;
 constant frontPorch  : in natural;
@@ -48,7 +48,24 @@ constant backPorch   : in natural;
 constant dataLen     : in natural;
 constant syncWidth   : in natural) is 
 begin
-	--empty
+		-- Count
+	if (syncCounter < (backPorch + dataLen + frontPorch + syncWidth)) then
+		syncCounter <= syncCounter + 1;		
+	else 
+		syncCounter <= 0;
+	end if;
+	-- BlankOut
+	if (syncCounter >= backPorch and syncCounter < (backPorch + dataLen)) then
+		blankOut <= '0';
+	else
+		blankOut <= '1';
+	end if;
+	-- SyncOut
+	if (syncCounter < (backPorch + dataLen + frontPorch)) then
+		syncOut <= '1';
+	else
+		syncOut <= '0';
+	end if;
 end syncGenerator;
 
 begin
